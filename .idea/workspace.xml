@@ -37,7 +37,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="notes.jsp" pinned="false" current-in-tab="true">
+      <file leaf-file-name="notes.jsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/notes.jsp">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="205">
@@ -67,11 +67,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SpringBootWebApplication.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="SpringBootWebApplication.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/mkyong/SpringBootWebApplication.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="11" column="40" lean-forward="false" selection-start-line="11" selection-start-column="39" selection-end-line="11" selection-end-column="40" />
+            <state relative-caret-position="193">
+              <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -169,6 +169,7 @@
         <option value="$PROJECT_DIR$/src/main/java/com/mkyong/WelcomeController.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/welcome.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/notes.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/com/mkyong/SpringBootWebApplication.java" />
       </list>
     </option>
   </component>
@@ -528,12 +529,12 @@
       <workItem from="1508492180408" duration="19000" />
       <workItem from="1508525323656" duration="15057000" />
       <workItem from="1508661569938" duration="4160000" />
-      <workItem from="1508675869720" duration="1686000" />
+      <workItem from="1508675869720" duration="2295000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="39690000" />
+    <option name="totallyTimeSpent" value="40299000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1358" y="-8" width="1456" height="876" extended-state="6" />
@@ -930,14 +931,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/mkyong/SpringBootWebApplication.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="11" column="40" lean-forward="false" selection-start-line="11" selection-start-column="39" selection-end-line="11" selection-end-column="40" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/css/main.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -984,6 +977,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="205">
           <caret line="25" column="8" lean-forward="true" selection-start-line="25" selection-start-column="8" selection-end-line="25" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/mkyong/SpringBootWebApplication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="193">
+          <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
           <folding />
         </state>
       </provider>
