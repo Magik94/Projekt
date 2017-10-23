@@ -14,8 +14,6 @@
           <element id="library" level="project" name="Maven: org.springframework.boot:spring-boot-starter-logging:1.4.2.RELEASE" />
           <element id="library" level="project" name="Maven: ch.qos.logback:logback-classic:1.1.7" />
           <element id="library" level="project" name="Maven: ch.qos.logback:logback-core:1.1.7" />
-          <element id="library" level="project" name="Maven: org.slf4j:slf4j-api:1.7.21" />
-          <element id="library" level="project" name="Maven: org.slf4j:jcl-over-slf4j:1.7.21" />
           <element id="library" level="project" name="Maven: org.slf4j:jul-to-slf4j:1.7.21" />
           <element id="library" level="project" name="Maven: org.slf4j:log4j-over-slf4j:1.7.21" />
           <element id="library" level="project" name="Maven: org.springframework:spring-core:4.3.4.RELEASE" />
@@ -36,6 +34,15 @@
           <element id="library" level="project" name="Maven: javax.servlet:jstl:1.2" />
           <element id="library" level="project" name="Maven: org.webjars:bootstrap:3.3.7" />
           <element id="library" level="project" name="Maven: org.webjars:jquery:1.11.1" />
+          <element id="library" level="project" name="Maven: org.springframework.boot:spring-boot-starter-data-mongodb:1.4.2.RELEASE" />
+          <element id="library" level="project" name="Maven: org.mongodb:mongodb-driver:3.2.2" />
+          <element id="library" level="project" name="Maven: org.mongodb:mongodb-driver-core:3.2.2" />
+          <element id="library" level="project" name="Maven: org.mongodb:bson:3.2.2" />
+          <element id="library" level="project" name="Maven: org.springframework.data:spring-data-mongodb:1.9.5.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-tx:4.3.4.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework.data:spring-data-commons:1.12.5.RELEASE" />
+          <element id="library" level="project" name="Maven: org.slf4j:slf4j-api:1.7.21" />
+          <element id="library" level="project" name="Maven: org.slf4j:jcl-over-slf4j:1.7.21" />
         </element>
       </element>
       <element id="directory" name="META-INF">
