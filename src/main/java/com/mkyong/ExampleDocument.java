@@ -4,6 +4,8 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.annotation.PersistenceConstructor;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import java.util.Date;
+
 /**
  * Created by Mroziqella on 23.10.2017.
  */
@@ -11,15 +13,15 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class ExampleDocument {
     @Id
     private String id;
-    private String imie ;
-    private Long age;
+    private Date date;
+    private String desc;
 
     public ExampleDocument() {
     }
 
-    public ExampleDocument(String imie, Long age) {
-        this.imie = imie;
-        this.age = age;
+    public ExampleDocument(Date date, String desc) {
+        this.date = date;
+        this.desc = desc;
     }
 
 
@@ -31,19 +33,18 @@ public class ExampleDocument {
         this.id = id;
     }
 
-    public String getImie() {
-        return imie;
+    public Date getDate() {
+        return date;
     }
 
-    public void setImie(String imie) {
-        this.imie = imie;
+    public void setDate(Date date) {
+        this.date = date;
     }
 
-    public Long getAge() {
-        return age;
-    }
+   public String getDesc (){return  desc;}
 
-    public void setAge(Long age) {
-        this.age = age;
-    }
+   public  void setDesc(String desc){
+       this.desc = desc;
+   }
+
 }
