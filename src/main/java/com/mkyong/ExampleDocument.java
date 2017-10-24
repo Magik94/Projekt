@@ -11,7 +11,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class ExampleDocument {
     @Id
     private String id;
-    private String imie;
+    private String imie ;
     private Long age;
 
     public ExampleDocument() {

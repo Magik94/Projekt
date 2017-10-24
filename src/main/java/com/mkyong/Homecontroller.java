@@ -8,9 +8,7 @@ public class Homecontroller {
     @Controller
     public class HomeController {
         @RequestMapping("/")
-        public String welcome(Model model){
-            model.addAttribute("greeting", "witaj kurwa");
-            model.addAttribute("tagline", "chuj w dupe");
+        public String welcome(){
             return  "welcome";
         }
     }

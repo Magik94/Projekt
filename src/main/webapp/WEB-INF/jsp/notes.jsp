@@ -27,7 +27,7 @@
 </TABLE>
 <ul>
     <c:forEach var="listValue" items="${examples}">
-        <li>${listValue.imie} - ${listValue.age}</li>
+        <li>${listValue.date} - ${listValue.desc}</li>
     </c:forEach>
 </ul>
 

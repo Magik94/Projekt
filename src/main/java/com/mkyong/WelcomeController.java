@@ -18,9 +18,6 @@ public class WelcomeController {
 	@Autowired
 	private ExampleRepository exampleRepository;
 
-	// inject via application.properties
-	@Value("${welcome.message:test}")
-	private String message = "Hello Worldxd";
 
 	@RequestMapping("/")
 	public String welcome() {
@@ -28,11 +25,16 @@ public class WelcomeController {
 	}
 	@RequestMapping("/notes")
 	public String notes(Model model){
-		ExampleDocument osoba = new ExampleDocument("Osoba", 4l);
-		exampleRepository.insert(osoba);
-		List<ExampleDocument> all = exampleRepository.findAll();
-		model.addAttribute("examples",all);
+		ExampleNote note = new ExampleNote("25.10.2017", "yeee");
+		exampleRepository.insert(note);
+		List<ExampleNote> all = exampleRepository.findAll();
+		model.addAttribute("example",all);
 		return "notes";
+//		ExampleDocument osoba = new ExampleDocument("Osoba", 4l);
+//		exampleRepository.insert(osoba);
+//		List<ExampleDocument> all = exampleRepository.findAll();
+//		model.addAttribute("examples",all);
+//		return "notes";
 	}
 
 

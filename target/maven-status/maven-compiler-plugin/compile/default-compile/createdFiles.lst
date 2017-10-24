@@ -1,4 +1,5 @@
 com\mkyong\ExampleDocument.class
+com\mkyong\ExampleNote.class
 com\mkyong\WelcomeController.class
 com\mkyong\SpringBootWebApplication.class
 com\mkyong\Homecontroller$HomeController.class
