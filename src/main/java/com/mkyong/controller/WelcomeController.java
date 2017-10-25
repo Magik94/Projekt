@@ -1,18 +1,22 @@
-package com.mkyong;
+package com.mkyong.controller;
 
 
 import java.util.List;
+
+import com.mkyong.Document.DayDocument;
+import com.mkyong.repository.ExampleRepository;
+import com.mkyong.Service.NoteService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import java.util.Date;
-import java.util.logging.Logger;
 
 @Controller
 public class WelcomeController {
 
+	@Autowired
+	private NoteService noteService;
 	@Autowired
 	private ExampleRepository exampleRepository;
 
@@ -30,15 +34,9 @@ public class WelcomeController {
 //		model.addAttribute("example",all);
 //		return "notes";
 
-		ExampleDocument osoba = new ExampleDocument(new Date(),"tedada");
-		Logger logger = Logger.getLogger(this.getClass().getName()) ;
-		logger.info("traaaa   "+osoba.getDate());
-		exampleRepository.insert(osoba);
-		logger.info("traaaa  1   "+osoba.getDate());
-		List<ExampleDocument> all = exampleRepository.findAll();
-		logger.info("traaaa  2 "+osoba.getDate());
+		noteService.upload(new Date(),"d");
+		List<DayDocument> all = exampleRepository.findAll();
 		model.addAttribute("examples",all);
-		logger.info("traaaa  4 "+osoba.getDate());
 		return "notes";
 	}
 

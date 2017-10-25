@@ -1,4 +1,4 @@
-package com.mkyong;
+package com.mkyong.enity;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;

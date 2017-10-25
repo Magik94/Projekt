@@ -1,7 +1,8 @@
-com\mkyong\ExampleDocument.class
-com\mkyong\ExampleNote.class
-com\mkyong\WelcomeController.class
+com\mkyong\controller\Homecontroller$HomeController.class
+com\mkyong\enity\ExampleNote.class
+com\mkyong\repository\ExampleRepository.class
+com\mkyong\Service\NoteService.class
+com\mkyong\controller\WelcomeController.class
+com\mkyong\Document\DayDocument.class
+com\mkyong\controller\Homecontroller.class
 com\mkyong\SpringBootWebApplication.class
-com\mkyong\Homecontroller$HomeController.class
-com\mkyong\Homecontroller.class
-com\mkyong\ExampleRepository.class

@@ -1,8 +1,7 @@
-package com.mkyong;
+package com.mkyong.Document;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
-import org.springframework.format.annotation.DateTimeFormat;
 
 import java.util.Date;
 
@@ -10,17 +9,16 @@ import java.util.Date;
  * Created by Mroziqella on 23.10.2017.
  */
 @Document
-public class ExampleDocument {
+public class DayDocument {
     @Id
     private String id;
-    @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME)
     private Date date;
     private String desc;
 
-    public ExampleDocument() {
+    public DayDocument() {
     }
 
-    public ExampleDocument(Date date, String desc) {
+    public DayDocument(Date date, String desc) {
         this.date = date;
         this.desc = desc;
     }
