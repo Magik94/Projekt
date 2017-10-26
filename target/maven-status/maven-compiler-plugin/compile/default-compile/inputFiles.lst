@@ -1,6 +1,7 @@
-C:\Users\Dawid\Desktop\praca\Projekt\src\main\java\com\mkyong\WelcomeController.java
-C:\Users\Dawid\Desktop\praca\Projekt\src\main\java\com\mkyong\ExampleDocument.java
-C:\Users\Dawid\Desktop\praca\Projekt\src\main\java\com\mkyong\ExampleRepository.java
-C:\Users\Dawid\Desktop\praca\Projekt\src\main\java\com\mkyong\Homecontroller.java
+C:\Users\Dawid\Desktop\praca\Projekt\src\main\java\com\mkyong\enity\ExampleNote.java
+C:\Users\Dawid\Desktop\praca\Projekt\src\main\java\com\mkyong\controller\WelcomeController.java
+C:\Users\Dawid\Desktop\praca\Projekt\src\main\java\com\mkyong\repository\ExampleRepository.java
+C:\Users\Dawid\Desktop\praca\Projekt\src\main\java\com\mkyong\controller\Homecontroller.java
 C:\Users\Dawid\Desktop\praca\Projekt\src\main\java\com\mkyong\SpringBootWebApplication.java
-C:\Users\Dawid\Desktop\praca\Projekt\src\main\java\com\mkyong\ExampleNote.java
+C:\Users\Dawid\Desktop\praca\Projekt\src\main\java\com\mkyong\Document\DayDocument.java
+C:\Users\Dawid\Desktop\praca\Projekt\src\main\java\com\mkyong\Service\NoteService.java

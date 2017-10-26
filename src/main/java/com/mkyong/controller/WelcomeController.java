@@ -34,7 +34,8 @@ public class WelcomeController {
 //		model.addAttribute("example",all);
 //		return "notes";
 
-		noteService.upload(new Date(),"d");
+		//noteService.upload(new Date(),"d");
+		noteService.addDay(1, "dodałem jedne dzień");
 		List<DayDocument> all = exampleRepository.findAll();
 		model.addAttribute("examples",all);
 		return "notes";

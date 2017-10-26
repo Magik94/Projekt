@@ -3,6 +3,7 @@ package com.mkyong.Document;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import java.time.LocalDate;
 import java.util.Date;
 
 /**
@@ -12,14 +13,14 @@ import java.util.Date;
 public class DayDocument {
     @Id
     private String id;
-    private Date date;
+    private LocalDate localDate;
     private String desc;
 
     public DayDocument() {
     }
 
-    public DayDocument(Date date, String desc) {
-        this.date = date;
+    public DayDocument(LocalDate localDate, String desc) {
+        this.localDate = localDate;
         this.desc = desc;
     }
 
@@ -32,12 +33,12 @@ public class DayDocument {
         this.id = id;
     }
 
-    public Date getDate() {
-        return date;
+    public LocalDate getLocalDate() {
+        return localDate ;
     }
 
-    public void setDate(Date date) {
-        this.date = date;
+    public void setLocalDate (LocalDate localDate) {
+        this.localDate = localDate;
     }
 
    public String getDesc (){return  desc;}

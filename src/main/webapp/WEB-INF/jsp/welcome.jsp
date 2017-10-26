@@ -29,12 +29,12 @@
 <p>Dzisiaj jest : <%=iTDay%>/<%=iTMonth%>/<%=iTYear%></p>
 </table >
 <form>
-<input type= "button" value="next day"  >
+<input type= "button" onclick="location.href='/notes'" value="next day"  >
 
-<p>Dzisiaj jest : <%=iTDay 	%>/<%=iTMonth%>/<%=iTYear%></p>
+<p>Dzisiaj jest : </p>
 <tr>
 
-<input type="button"  onclick="location.href='/notes'" value="Add Notes" >
+<input type="button"   value="Add Notes" >
 
 </tr>
 </form>
