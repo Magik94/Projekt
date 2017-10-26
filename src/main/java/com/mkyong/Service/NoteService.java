@@ -29,9 +29,8 @@ public class NoteService {
     }
 
     public void addDay(int value, String desc) {
-        Date date = new Date();
-        LocalDate localDate = LocalDate.now().plusDays(value);
 
+        LocalDate localDate = LocalDate.now().plusDays(value);
         exampleRepository.insert(new DayDocument(localDate, desc));
     }
 
