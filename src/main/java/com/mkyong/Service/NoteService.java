@@ -6,6 +6,7 @@ import com.mkyong.repository.ExampleRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.management.Query;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.Month;
@@ -29,9 +30,13 @@ public class NoteService {
     }
 
     public void addDay(int value, String desc) {
+        LocalDate localDate = LocalDate.now();
+       // System.out.println(localDate);
 
-        LocalDate localDate = LocalDate.now().plusDays(value);
+       localDate = LocalDate.now().plusDays(value);
+        //System.out.println(localDate);
         exampleRepository.insert(new DayDocument(localDate, desc));
+
     }
 
 }

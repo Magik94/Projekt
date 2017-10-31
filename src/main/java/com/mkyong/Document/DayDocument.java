@@ -24,6 +24,14 @@ public class DayDocument {
         this.desc = desc;
     }
 
+    @Override
+    public String toString() {
+        return "DayDocument{" +
+                "id='" + id + '\'' +
+                ", localDate=" + localDate +
+                ", desc='" + desc + '\'' +
+                '}';
+    }
 
     public String getId() {
         return id;

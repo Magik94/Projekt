@@ -1,6 +1,7 @@
 package com.mkyong.controller;
 
 
+import java.time.LocalDate;
 import java.util.List;
 
 import com.mkyong.Document.DayDocument;
@@ -20,24 +21,23 @@ public class WelcomeController {
 	@Autowired
 	private ExampleRepository exampleRepository;
 
-
 	@RequestMapping("/")
-	public String welcome() {
+	public String welcome(Model model) {
+		exampleRepository.findByDayDocumentLocalDate("d").forEach(System.out::println);
+		//
+//		List<DayDocument> question = exampleRepository.findByDayDocumentLocalDate("d");
+//		model.addAttribute("examples",question);
+		//System.out.println(question+ "tutaj");
 		return "welcome";
 	}
+
 	@RequestMapping("/notes")
-
 	public String notes(Model model){
-//		ExampleNote note = new ExampleNote("25.10.2017", "yeee");
-//		exampleRepository.insert(note);
-//		List<ExampleNote> all = exampleRepository.findAll();
-//		model.addAttribute("example",all);
-//		return "notes";
-
 		//noteService.upload(new Date(),"d");
-		noteService.addDay(1, "dodałem jedne dzień");
+		noteService.addDay(1, "d");
 		List<DayDocument> all = exampleRepository.findAll();
-		model.addAttribute("examples",all);
+		model.addAttribute("examples",all); //odpowiada za wyświetlenie na stronie www
+
 		return "notes";
 	}
 
