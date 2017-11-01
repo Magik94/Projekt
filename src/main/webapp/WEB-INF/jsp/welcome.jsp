@@ -26,7 +26,7 @@
 <body>
 <title>Calendar in JSP</title>
 <table width="100%" border="0" cellspacing="0" cellpadding="0">
-<p>Dzisiaj jest : <%=iTDay%>/<%=iTMonth%>/<%=iTYear%></p>
+<p>Dzisiaj jest : <%=iTDay%>/<%=iTMonth+1%>/<%=iTYear%></p>
 </table >
 <form>
 <input type= "button" onclick="location.href='/notes'" value="next day"  >
@@ -37,6 +37,12 @@
 <input type="button"   value="Add Notes" >
 
 </tr>
+	<ul>
+		<c:forEach var="listValue" items="${findall}">
+			<li>${listValue.localDate} - ${listValue.desc}</li>
+		</c:forEach>
+	</ul>
 </form>
+
 </body>
 </html>
