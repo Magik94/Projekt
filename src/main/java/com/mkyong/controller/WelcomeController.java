@@ -42,10 +42,10 @@ public class WelcomeController {
 	}
 
 	@RequestMapping(value = "/search", method = RequestMethod.GET)
-	public ModelAndView searchDaysAndNotes(@RequestParam(value = "cn",required = false) String cn){
+	public ModelAndView searchDaysAndNotes(@RequestParam(value = "desc",required = false) String desc){
 		ModelAndView modelAndView = new ModelAndView("search","command", new DayDocument());
 		//exampleRepository.findByAllDocumentLocalDate("d").forEach(System.out::println);
-		System.out.println(cn+"wez");
+		System.out.println(desc+"wez");
 		return modelAndView;
 
 }
