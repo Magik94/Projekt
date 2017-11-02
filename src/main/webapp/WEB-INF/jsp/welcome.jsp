@@ -15,14 +15,9 @@
 <p>Dzisiaj jest : </p>
 <tr>
 	<input type="button" value="PreviusDay" onclick="location.href='/previusDay'">
-<input type="button"   value="NextDay" onclick="location.href='/nextDay'" >
+<input type="button"   value="NextDay" onclick="location.href='/nextDay?nextDate=${day.nextDate}'" >
+	<p>${day.localDate} - ${day.desc}</p>
 
-</tr>
-	<ul>
-		<c:forEach var="listValue" items="${findall}">
-			<li>${listValue.localDate} - ${listValue.desc}</li>
-		</c:forEach>
-	</ul>
 </form>
 
 </body>

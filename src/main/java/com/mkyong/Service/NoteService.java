@@ -1,8 +1,9 @@
 package com.mkyong.Service;
 
-
 import com.mkyong.Document.DayDocument;
 import com.mkyong.repository.ExampleRepository;
+import java.util.Optional;
+import javax.annotation.PostConstruct;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Sort;
 import org.springframework.data.mongodb.core.query.Query;
@@ -12,58 +13,51 @@ import javax.swing.text.Document;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
+
 import static java.time.temporal.TemporalAdjusters.*;
 
 @Service
 public class NoteService {
 
-   private int temp =1;
 
-    private DayDocument nowLocalDate;
-    private LocalDate tempLocalDate =  LocalDate.now();//pobiera aktualną date
-    private List<DayDocument> downloadDays;
+  @Autowired
+  private ExampleRepository exampleRepository;
 
-    @Autowired
-    private ExampleRepository exampleRepository;
-
-
-    public void upload(LocalDate localDate, String desc) {
-
-        exampleRepository.insert(new DayDocument(localDate, desc));
+  @PostConstruct
+  private void setUpDate() {
+    Optional<DayDocument> currentDate =
+        exampleRepository.findByDayDocumentLocalDate(LocalDate.now())
+            .stream()
+            .findFirst();
+    if (!currentDate.isPresent()) {
+      DayDocument current = exampleRepository.insert(new DayDocument(LocalDate.now(), true));
+      currentDate=Optional.of(current);
     }
-
-    public void addDay(int value, String desc) {
-        LocalDate localDate = LocalDate.now();
-        //System.out.println(localDate);
-
-       localDate = LocalDate.now().plusDays(value);
-        //System.out.println(localDate+"po");
-        exampleRepository.insert(new DayDocument(localDate, desc));
-
+    DayDocument dayDocument = currentDate.get();
+    if (dayDocument.getNextDate() == null) {
+      addDay(dayDocument);
     }
-    public List<DayDocument> nextDay(){
-        int plusDay =1;
-        int size;
+  }
 
-        downloadDays = exampleRepository.findByDayDocumentLocalDate(tempLocalDate.plusDays(temp-1)); //sprawdzam czy dzień jest w bazie aktualny
-        size = downloadDays.size(); //pobiera rozmiar listy
-        nowLocalDate = downloadDays.get(size-1); //pobieranie
-        downloadDays = exampleRepository.findByDayDocumentLocalDate(nowLocalDate.getLocalDate().plusDays(plusDay));//sprawdzam czy kolejny dzień jest w bazie
-        if(downloadDays.isEmpty()) { //jesli llista jest pusta nie ma dnia spełania warunek
-            addDay(temp,"dodałem 3 dzien");
-            temp+=1;
-        }
-        plusDay+=1;
-        return  exampleRepository.findByDayDocumentLocalDate(tempLocalDate.plusDays(temp-1)); //sprawdzam czy dzień jest w bazie aktualny
+  private void addDay(DayDocument dayDocument) {
+    LocalDate nextLocalDate = dayDocument.getLocalDate().plusDays(1);
+    DayDocument newDate = exampleRepository.insert(new DayDocument(nextLocalDate, true));
+    dayDocument.setNextDate(newDate.getId());
+    dayDocument.setLastDateInCalendar(false);
+    exampleRepository.save(dayDocument);
+  }
 
+
+  public DayDocument nextDay(String nextDayId) {
+    DayDocument dayDocument = exampleRepository.findOne(nextDayId);
+    if(dayDocument.getNextDate()==null){
+      addDay(dayDocument);
     }
-    public List<DayDocument> previusDays(){
-        List <DayDocument> tmpDays = exampleRepository.findByDayDocumentLocalDate(tempLocalDate.plusDays(temp-1));
+    return dayDocument;
+  }
 
-        System.out.println(tmpDays+"szakal");
-        System.out.println(exampleRepository.findByDayDocumentLocalDate(tempLocalDate.plusDays(temp-1))+"data ?");
-        return exampleRepository.findByDayDocumentLocalDate(tempLocalDate.plusDays(temp-1));
-    }
-
+  public DayDocument getCurrentDate() {
+    return exampleRepository.findByDayDocumentLocalDate(LocalDate.now()).get(0);
+  }
 }
 

@@ -17,6 +17,7 @@ public class DayDocument {
     private String desc;
     private String nextDate;
     private String previousDate;
+    private boolean isLastDateInCalendar;
 
     public DayDocument() {
     }
@@ -24,6 +25,11 @@ public class DayDocument {
     public DayDocument(LocalDate localDate, String desc) {
         this.localDate = localDate;
         this.desc = desc;
+    }
+
+    public DayDocument( LocalDate localDate,  boolean isLastDateInCalendar) {
+        this.localDate = localDate;
+        this.isLastDateInCalendar = isLastDateInCalendar;
     }
 
     @Override
@@ -66,4 +72,12 @@ public class DayDocument {
     public String getPreviousDate() { return previousDate;}
 
     public void setPreviousDate(String previousDate) { this.previousDate = previousDate; }
+
+    public boolean isLastDateInCalendar() {
+        return isLastDateInCalendar;
+    }
+
+    public void setLastDateInCalendar(boolean lastDateInCalendar) {
+        isLastDateInCalendar = lastDateInCalendar;
+    }
 }

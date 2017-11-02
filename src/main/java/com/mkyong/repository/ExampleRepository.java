@@ -10,14 +10,12 @@ import javax.swing.text.Document;
 import java.time.LocalDate;
 import java.util.List;
 
-
 public interface ExampleRepository extends MongoRepository<DayDocument, String> {
 
-        @Query("{'desc' : ?0 }")
-        List<DayDocument> findByAllDocumentLocalDate(String desc); //pobiernaie textu z bazy
+  @Query("{'desc' : ?0 }")
+  List<DayDocument> findByAllDocumentLocalDate(String desc); //pobiernaie textu z bazy
 
-         @Query("{'localDate' : ?0 }")
-            List<DayDocument> findByDayDocumentLocalDate(LocalDate localDate); //pobiernaie daty z bazy
-
+  @Query("{'localDate' : ?0 }")
+  List<DayDocument> findByDayDocumentLocalDate(LocalDate localDate); //pobiernaie daty z bazy
 
 }
