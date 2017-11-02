@@ -15,6 +15,8 @@ public class DayDocument {
     private String id;
     private LocalDate localDate;
     private String desc;
+    private String nextDate;
+    private String previousDate;
 
     public DayDocument() {
     }
@@ -30,6 +32,8 @@ public class DayDocument {
                 "id='" + id + '\'' +
                 ", localDate=" + localDate +
                 ", desc='" + desc + '\'' +
+                ", nextDate='" + nextDate + '\'' +
+                ", previousDate='" + previousDate + '\'' +
                 '}';
     }
 
@@ -49,10 +53,17 @@ public class DayDocument {
         this.localDate = localDate;
     }
 
-   public String getDesc (){return  desc;}
+    public String getDesc (){return  desc;}
 
-   public  void setDesc(String desc){
+    public  void setDesc(String desc){
        this.desc = desc;
    }
 
+    public String getNextDate() {return nextDate;}
+
+    public void setNextDate(String nextDate) {this.nextDate = nextDate;}
+
+    public String getPreviousDate() { return previousDate;}
+
+    public void setPreviousDate(String previousDate) { this.previousDate = previousDate; }
 }

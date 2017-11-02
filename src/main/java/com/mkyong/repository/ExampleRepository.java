@@ -1,10 +1,12 @@
 package com.mkyong.repository;
 
 import com.mkyong.Document.DayDocument;
+import com.mongodb.BasicDBObject;
 import org.springframework.data.mongodb.core.query.Criteria;
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.data.mongodb.repository.Query;
 
+import javax.swing.text.Document;
 import java.time.LocalDate;
 import java.util.List;
 
@@ -16,8 +18,6 @@ public interface ExampleRepository extends MongoRepository<DayDocument, String> 
 
          @Query("{'localDate' : ?0 }")
             List<DayDocument> findByDayDocumentLocalDate(LocalDate localDate); //pobiernaie daty z bazy
-
-
 
 
 }

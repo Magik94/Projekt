@@ -23,31 +23,18 @@ public class WelcomeController {
 	@Autowired
 	private ExampleRepository exampleRepository;
 
-	@RequestMapping("/")
-	public String welcome(Model model ,DayDocument dayDocument) {
-		//exampleRepository.findByAllDocumentLocalDate("d").forEach(System.out::println);
-		//exampleRepository.findByDayDocumentLocalDate(LocalDate.of(2017,11,01)).forEach(System.out::println);
-		List<DayDocument> searchDate = exampleRepository.findByDayDocumentLocalDate(LocalDate.of(2017,11,01));
-		model.addAttribute("findall",searchDate);
+	@RequestMapping(value = "/previusDay",method = RequestMethod.GET)
+	public String welcome(Model model) {
+		//noteService.addDay(1, "dodałem jeden dzień+13");
+		model.addAttribute("findall",noteService.previusDays());
+		System.out.println("1");
 		return "welcome";
 	}
-
-	@RequestMapping("/notes")
-	public String notes(Model model){
-		//noteService.upload(new Date(),"d");
-		noteService.addDay(1, "dobrze");
-		List<DayDocument> all = exampleRepository.findAll();
-		model.addAttribute("examples",all); //odpowiada za wyświetlenie na stronie www
-		return "notes";
+	@RequestMapping(value = "/nextDay" ,method = RequestMethod.GET)
+	public String nextDay(Model model){
+		model.addAttribute("findall",noteService.nextDay());
+		System.out.println("2");
+		return "welcome";
 	}
-
-	@RequestMapping(value = "/search", method = RequestMethod.GET)
-	public ModelAndView searchDaysAndNotes(@RequestParam(value = "desc",required = false) String desc){
-		ModelAndView modelAndView = new ModelAndView("search","command", new DayDocument());
-		//exampleRepository.findByAllDocumentLocalDate("d").forEach(System.out::println);
-		System.out.println(desc+"wez");
-		return modelAndView;
-
 }
-	}
 
