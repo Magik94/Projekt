@@ -30,7 +30,7 @@ public class NoteService {
             .stream()
             .findFirst();
     if (!currentDate.isPresent()) {
-      DayDocument current = exampleRepository.insert(new DayDocument(LocalDate.now(), true));
+      DayDocument current = exampleRepository.insert(new DayDocument(LocalDate.now()));
       currentDate=Optional.of(current);
     }
     DayDocument dayDocument = currentDate.get();
@@ -41,9 +41,8 @@ public class NoteService {
 
   private void addDay(DayDocument dayDocument) {
     LocalDate nextLocalDate = dayDocument.getLocalDate().plusDays(1);
-    DayDocument newDate = exampleRepository.insert(new DayDocument(nextLocalDate, true));
+    DayDocument newDate = exampleRepository.insert(new DayDocument(nextLocalDate));
     dayDocument.setNextDate(newDate.getId());
-    dayDocument.setLastDateInCalendar(false);
     exampleRepository.save(dayDocument);
   }
 
